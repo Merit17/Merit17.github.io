@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kaarten</title>
+<link rel="stylesheet" type="text/css" href="Css/Index.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+
+<style>
+    /*green: #b4daa2
+    blue: #0097ac
+    Heading-fonts: 
+    text-font: Acumin Variable Concept
+    */
+
+    body {
+            font-family: 'Acumin Variable Concept', Arial;
+            font-size: 22px;
+            background: linear-gradient(to bottom right, #b4daa2 0%, #0097ac 100%);
+        }
+
+    h1,
+    h2,
+    h3,
+    h4 {font-family: 'Acumin Variable Concept', Arial}
+
+    div.container {text-shadow: 2px 2px 5px white;}
+
+    h2 {margin-bottom: 0px;}
+
+    div.a {text-align: center;}
+
+    div.a {
+        border: none;
+        margin: 50px;
+        margin-left: 10%;
+        position: relative;
+        display: block;
+        float: center;
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    #map {
+            height: 500px;
+            width: 80%;
+            margin: auto;
+        }
+
+    div.Black {
+        border: solid;
+        background-color: black;
+        margin: 0px;
+        position: relative;
+        display: block;
+        float: center;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+</style>
+
+</head>
+
+<body>
+
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="Indus.html">Indus</a></li>
+        <li><a href="Mississippi.html">Mississippi</a></li>
+        <li><a href="Kaarten.html">Kaarten</a></li>
+    </ul>
+
+    <div class="container">
+        <img src="IndusFromSpace2.jpg" alt="Indusriver" style="width:100%;">
+        <div class="centered maintitle">- Kaarten -<br></div>
+
+    </div>
+
+    <div class="a">
+        <h2>Mississippi Kaart</h2>
+        <p>......</p> 
+
+    </div>
+
+    <div id="map"></div>
+
+
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+
+    <script>
+        //initialize the map         
+        var map = L.map('map').setView([29.27641702, -89.35134905], 8);
+
+        //Create baselayer - tiles         
+        var backgroundMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 19
+        }
+        );
+
+        backgroundMap.addTo(map);
+    </script>
+
+    <div class="Black">
+        <p>black</p>
+    </div>
+
+</body>
+</html>
