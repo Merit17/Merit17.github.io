@@ -1,63 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Kaarten</title>
-<link rel="stylesheet" type="text/css" href="Css/Index.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 
-<style>
-    /*green: #b4daa2
+<head>
+    <title>Kaarten</title>
+    <link rel="stylesheet" type="text/css" href="Css/Index.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+
+    <style>
+        /*green: #b4daa2
     blue: #0097ac
     Heading-fonts: 
     text-font: Acumin Variable Concept
     */
 
-    body {
+        body {
             font-family: 'Acumin Variable Concept', Arial;
             font-size: 22px;
             background: linear-gradient(to bottom right, #b4daa2 0%, #0097ac 100%);
         }
 
-    h1,
-    h2,
-    h3,
-    h4 {font-family: 'Acumin Variable Concept', Arial}
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Acumin Variable Concept', Arial
+        }
 
-    div.container {text-shadow: 2px 2px 5px white;}
+        div.container {
+            text-shadow: 2px 2px 5px white;
+        }
 
-    h2 {margin-bottom: 0px;}
+        h2 {
+            margin-bottom: 0px;
+        }
 
-    div.a {text-align: center;}
+        div.a {
+            text-align: center;
+        }
 
-    div.a {
-        border: none;
-        margin: 50px;
-        margin-left: 10%;
-        position: relative;
-        display: block;
-        float: center;
-        width: 80%;
-        box-sizing: border-box;
-    }
+        div.a {
+            border: none;
+            margin: 50px;
+            margin-left: 10%;
+            position: relative;
+            display: block;
+            float: center;
+            width: 80%;
+            box-sizing: border-box;
+        }
 
-    #map {
+        p a {text-decoration: none; color: black;}
+
+        div.home {
+            text-align: center;
+            border: none;
+            margin: 50px;
+            margin-left: 40%;
+            position: relative;
+            display: block;
+            width: 20%;
+            box-sizing: border-box;
+            text-shadow: 2px 2px 5px white;
+        }
+
+        #map {
             height: 500px;
             width: 80%;
             margin: auto;
         }
 
-    div.Black {
-        border: solid;
-        background-color: black;
-        margin: 0px;
-        position: relative;
-        display: block;
-        float: center;
-        width: 100%;
-        box-sizing: border-box;
+        #mapIndus {
+            height: 500px;
+            width: 80%;
+            margin: auto;
         }
 
-</style>
+        .embed-container {
+            position: relative;
+            padding-bottom: 45%;
+            height: 0;
+            max-width: 100%;
+            margin-left: 15%;
+        }
+
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container iframe {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 500px;
+        }
+
+        small {
+            position: absolute;
+            z-index: 40;
+            bottom: 0;
+            margin-bottom: -15px;
+        }
+
+        div.Black {
+            border: solid;
+            background-color: black;
+            margin: 0px;
+            position: relative;
+            display: block;
+            float: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 
 </head>
 
@@ -78,18 +132,19 @@
 
     <div class="a">
         <h2>Mississippi Kaart</h2>
-        <p>......</p> 
+        <p>Dit is een kaart met punten waarop de locaties zijn te zien waar de Mississippi rivier samen met de grootste
+            zijrivieren
+            samenvoegen en verderstroomt als de Mississippi rivier.</p>
 
     </div>
 
     <div id="map"></div>
 
-
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 
     <script>
         //initialize the map         
-        var map = L.map('map').setView([29.27641702, -89.35134905], 8);
+        var map = L.map('map').setView([37.62584188, -90.2929683], 5);
 
         //Create baselayer - tiles         
         var backgroundMap = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -99,11 +154,99 @@
         );
 
         backgroundMap.addTo(map);
+
+        //Add markers
+        var missouri = L.marker([38.80651809, -90.11753083]).addTo(map);
+        missouri.addTo(map);
+
+        var ohio = L.marker([36.98180351, -89.13305283]).addTo(map);
+
+
+        var arkansas = L.marker([33.7726788, -91.10172271]).addTo(map);
+
+
+        var illinois = L.marker([38.96732832, -90.45132637]).addTo(map);
+
+
+        var croix = L.marker([44.74566645, -92.8032875]).addTo(map);
+
+
+        //Add pop-ups
+        var popup = "Punt waarop de Mississippi rivier & Missouri rivier samen komen.";
+        missouri.bindPopup(popup);
+
+        var popup1 = "Punt waarop de Mississippi rivier & Ohio rivier samen komen.";
+        ohio.bindPopup(popup1);
+
+        var popup2 = "Punt waarop de Mississippi rivier & Arkansas rivier samen komen.";
+        arkansas.bindPopup(popup2);
+
+        var popup3 = "Punt waarop de Mississippi rivier & Illinois rivier samen komen.";
+        illinois.bindPopup(popup3);
+
+        var popup4 = "Punt waarop de Mississippi rivier & Saint Croix rivier samen komen.";
+        croix.bindPopup(popup4);
+
     </script>
+
+    <div class="a">
+        <h2>Indus Kaart</h2>
+        <p>.....</p>
+    </div>
+
+    <div id="mapIndus"></div>
+    <p><a href="javascript:mapIndus.removeLayer(induslr)">hide</a> | <a href="javascript:induslr.addTo(mapIndus)">show</a></p>
+
+    <script src="Scripts/data.js"></script>
+    <script>
+        //initialize the map         
+        var mapIndus = L.map('mapIndus').setView([30.08811036, 70.6860375], 5);
+
+        //Create baselayer - tiles         
+        var backgroundMap2 = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 19
+        }
+        );
+
+        backgroundMap2.addTo(mapIndus);
+
+        var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+var induslr = L.geoJson(indusdata,
+    { pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.naam);
+    }
+}).addTo(mapIndus);
+
+    </script>    
+
+    <div class="a">
+        <h2>Stroomingsgebied Mississippi</h2>
+        <p>De Mississippi heeft een groot stromingsgebied. Dit gebied is gestrekt over 31 staten (Verenigde Staten & Canada).
+            Op de kaart is het stroomingsgebied van alleen de Verenigde Staten te zien.</p>
+    </div>
+
+    <div class="embed-container"><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0"
+            marginwidth="0" title="MississippiRiver"
+            src="//aereshogeschool.maps.arcgis.com/apps/Embed/index.html?webmap=d48b43fc7c5841e4ab23433d9d324211&extent=-136.4649,21.1927,-50.3321,53.0581&home=true&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe>
+    </div>
+
+    <div class="home">
+        <p><a href="index.html">- Home -</a></p>
+    </div>
 
     <div class="Black">
         <p>black</p>
     </div>
 
 </body>
+
 </html>
