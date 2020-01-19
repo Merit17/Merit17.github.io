@@ -45,7 +45,6 @@
             margin-left: 10%;
             position: relative;
             display: block;
-            float: center;
             width: 80%;
             box-sizing: border-box;
         }
@@ -107,7 +106,6 @@
             margin: 0px;
             position: relative;
             display: block;
-            float: center;
             width: 100%;
             box-sizing: border-box;
         }
@@ -191,7 +189,8 @@
 
     <div class="a">
         <h2>Indus Kaart</h2>
-        <p>.....</p>
+        <p>Dit is een kaart met punten waarop de locaties zijn te zien waar de Indus rivier samen met de grootste
+            zijrivieren samenvoegen en verderstroomt als de Indus rivier.</p>
     </div>
 
     <div id="mapIndus"></div>
@@ -222,7 +221,7 @@
 
 var induslr = L.geoJson(indusdata,
     { pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.naam);
+        return L.marker(latlng, geojsonMarkerOptions).bindPopup(feature.properties.naam);
     }
 }).addTo(mapIndus);
 
