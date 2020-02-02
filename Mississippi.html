@@ -4,6 +4,7 @@
 <head>
     <title>Mississippi River</title>
     <link rel="stylesheet" type="text/css" href="Css/Index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         /*green: #b4daa2
@@ -16,6 +17,7 @@ text-font: Acumin Variable Concept
             font-family: 'Acumin Variable Concept', Arial;
             font-size: 22px;
             background: linear-gradient(to bottom right, #b4daa2 0%, #0097ac 100%);
+            margin: 0%;
         }
 
         h1,
@@ -27,6 +29,14 @@ text-font: Acumin Variable Concept
 
         div.container {
             text-shadow: 2px 2px 5px white;
+        }
+
+        a.Logo {
+            border: none;
+            position: relative;
+            padding: 0%;
+            margin-top: 30%;
+            margin-left: 30%;
         }
 
         div.a {
@@ -120,14 +130,50 @@ text-font: Acumin Variable Concept
             padding: 10px;
         }
 
+        .fa {
+            padding: 5px;
+            font-size: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 5px;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+             opacity: 0.7;
+        }
+
+        .fa-linkedin {
+            background: white;
+            color: black;
+            }
+
+        .fa-pinterest {
+            background: white;
+            color: black;
+        }
+
+        .fa-logo {
+            background: white;
+            color: black;
+        }    
+
         div.Black {
             border: solid;
             background-color: black;
             margin: 0px;
             position: relative;
             display: block;
+            float: left;
             width: 100%;
             box-sizing: border-box;
+            text-align: center;
+        }
+
+        .Black p {
+            margin: 0.5em;
+            font-size: small;
+            color: white
         }
     </style>
 
@@ -136,6 +182,7 @@ text-font: Acumin Variable Concept
 <body>
 
     <ul>
+        <li><a class="Logo"><img src="Logo4.1.png" alt="Logo"></a></li>
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="Indus.html">Indus</a></li>
         <li><a href="Mississippi.html">Mississippi</a></li>
@@ -279,7 +326,12 @@ text-font: Acumin Variable Concept
     </div>
 
     <div class="Black">
-        <p>black</p>
+        <p>©2020 Urban Delta's by Merit</p>
+        <a href="https://www.linkedin.com/in/merit-van-doleweerd-090584194/" class="fa fa-linkedin"></a>
+        <a href="" class="fa fa-logo"> 
+            <img src="Logo4.1.png" alt="Logo">
+        </a>
+        <a href="https://nl.pinterest.com/mevd125/river/" class="fa fa-pinterest"></a>
     </div>
 
 </body>

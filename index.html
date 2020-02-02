@@ -6,6 +6,7 @@
     <link href="//db.onlinewebfonts.com/c/066ce24dae3730ed6c648b09efaea93a?family=Acumin+Variable+Concept"
         rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="Index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         /*green: #b4daa2
@@ -18,6 +19,7 @@ text-font: Acumin Variable Concept
             font-family: 'Acumin Variable Concept', Arial;
             font-size: 22px;
             background: linear-gradient(to bottom right, #b4daa2 0%, #0097ac 100%);
+            margin: 0%;
         }
 
         h1,
@@ -47,14 +49,35 @@ text-font: Acumin Variable Concept
 
         div.container {
             text-shadow: 2px 2px 5px white;
+            margin: 0%;
+            padding: 0%;
+            border: none;
         }
 
         a.Logo {
             border: none;
             position: relative;
             padding: 0%;
-            margin-top: 20%;
+            margin-top: 30%;
             margin-left: 30%;
+        }
+
+        .scroll {
+    color: black;
+    text-shadow: 2px 2px 5px white;
+    position: absolute;
+    bottom: 4vh;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+        svg {
+            vertical-align: middle;
         }
 
         .IndusSunset {
@@ -88,6 +111,7 @@ text-font: Acumin Variable Concept
             box-sizing: border-box;
             background-color: #a2dce9;
             padding: 2em;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         div.Missi img {
@@ -108,7 +132,8 @@ text-font: Acumin Variable Concept
             width: 70%;
             box-sizing: border-box;
             background-color: #A0D5B4;
-            padding: 2em
+            padding: 2em;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
         div.Indus img {
@@ -119,6 +144,84 @@ text-font: Acumin Variable Concept
             margin-right: 0%;
         }
 
+        #myImg {
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.9); 
+        }
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+        }
 
         div.About {
             border: solid white;
@@ -139,6 +242,34 @@ text-font: Acumin Variable Concept
             margin-right: 20%;
         }
 
+        .fa {
+            padding: 5px;
+            font-size: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 5px;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+             opacity: 0.7;
+        }
+
+        .fa-linkedin {
+            background: white;
+            color: black;
+            }
+
+        .fa-pinterest {
+            background: white;
+            color: black;
+        }
+
+        .fa-logo {
+            background: white;
+            color: black;
+        }    
+
         div.Black {
             border: solid;
             background-color: black;
@@ -148,6 +279,7 @@ text-font: Acumin Variable Concept
             float: left;
             width: 100%;
             box-sizing: border-box;
+            text-align: center;
         }
 
         .Black p {
@@ -155,13 +287,14 @@ text-font: Acumin Variable Concept
             font-size: small;
             color: white
         }
+
     </style>
 </head>
 
 <body>
 
     <ul>
-        <li><a class="Logo"><img src="Logo4.png" alt="Logo"></a></li>
+        <li><a class="Logo"><img src="Logo4.1.png" alt="Logo"></a></li>
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="Indus.html">Indus</a></li>
         <li><a href="Mississippi.html">Mississippi</a></li>
@@ -174,30 +307,74 @@ text-font: Acumin Variable Concept
 
     </div>
 
+    <div class="scroll" style="display: block; opacity: 1;">
+        <svg class="svg-scroll" width="42" height="23" viewBox="0 0 42 23" xmlns="https://www.w3.org/2000/svg" style="transform: matrix(1, 0, 0, 1, 0, 0,);">
+        <path d="M1 1l20.366 20.366L41 1.732" stroke-width="2" stroke="#000000" fill="none" fill-rule="evenodd"></path>
+        </svg>
+    </div>
 
     <div class="Indus">
-        <img src="IndusSunsetPalmtree.jpg" alt="Indus" width="60%" height="60%">
+        <a href="Indus.html">
+        <img id="myImg" src="IndusSunsetPalmtree.jpg" alt="Indus" width="60%" height="60%">
+        </a>
         <h1><a href="Indus.html">- Indus -</a></h1><br>
         <p>Pakistan</p><br>
     </div>
 
 
     <div class="Missi">
-        <img src="MississippiBridge2.jpg" alt="Mississippi" width="60%" height="60%">
+        <a href="Mississippi.html">
+        <img id="myImg" src="MississippiBridge2.jpg" alt="Mississippi" width="60%" height="60%">
+        </a>
         <h1><a href="Mississippi.html">- Mississippi -</a></h1><br>
         <p>United States</p><br>
     </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        }
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+        </script>
 
     <div class="About">
         <h4>About Me</h4>
-        <p>Hallo, ik ben Merit een studente aan de opleiding Geo Media & Design. Deze studie volg ik op Aeres Hogeschool
-            in Almere. Voor de module HWUD heb ik deze website gemaakt over twee urban delta's.</p>
+        <p>Hallo, ik ben Merit, een studente aan de opleiding Geo Media & Design. Deze studie volg ik op Aeres Hogeschool
+            in Almere. Voor de module HWUD heb ik deze website gemaakt over twee urban delta's. Voorafgaand van het maken 
+            van deze website is er een Internet Project Plan gemaakt. Voor meer informatie klik <a href="https://issuu.com/mevd125/docs/ippaf" target="_blank">here</a> 
+            om het Internet Project Plan in te zien.</p>
     </div>
 
     <div class="Black">
-        <p>Copyright</p>
+        <p>©2020 Urban Delta's by Merit</p>
+        <a href="https://www.linkedin.com/in/merit-van-doleweerd-090584194/" class="fa fa-linkedin" target="_blank"></a>
+        <a href="" class="fa fa-logo"> 
+            <img src="Logo4.1.png" alt="Logo">
+        </a>
+        <a href="https://nl.pinterest.com/mevd125/river/" class="fa fa-pinterest" target="_blank"></a>
     </div>
 
 </body>
